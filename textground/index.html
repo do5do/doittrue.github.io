@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>customize text</title>
+
+	<link rel="shortcut icon" href="./assets/images/favicon.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//cdn.rawgit.com/jmnote/IropkeBatang/master/iropkebatang.css">
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<link href="./build/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="background">
+    <header class="table">
+  <div class="table-cell">
+    <!-- 정렬 아이콘 -->
+    <div class="align-box text-left z-control">
+      <div class="align box1"></div>
+      <div class="align box2"></div>
+      <div class="align box3"></div>
+      <div class="align box4"></div>
+    </div>
+    <!-- 서체 변경 -->
+    <div class="font-type__box z-control" data-target="modal">
+      <p class="font-type">
+        서체
+      </p>
+    </div>
+    <!-- 글자 크기 -->
+    <div class="text-size z-control" data-target="text">
+      <p>가</p>
+      <div class="plus-box">
+        <div class="plus-box__inner">
+          <span class="plus"></span>
+          <span class="plus vertical"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- color 변경 -->
+  <div class="table-cell text-right">
+    <div class="color-box z-control" data-target="bg-color">
+      <span>bg</span>
+      <span class="circle stroke"></span>
+    </div>
+    <div class="color-box z-control" data-target="tx-color">
+      <span>text</span>
+      <span class="circle"></span>
+    </div>
+  </div>
+</header>
+
+<!-- select modal 서체 선택 -->
+<div class="modal" data-modal="select">
+  <div class="modal-content">
+    <div class="tab-bar">
+      <div class="tab tab-01 selected" data-tab="gothic">
+        <p>고딕체</p>
+      </div>
+      <div class="tab tab-02" data-tab="myungjo">
+        <p>명조체</p>
+      </div>
+    </div>
+    <ul class="select-list__01 select-list">
+      <li class="selected" data-font="Apple SD Gothic Neo" data-weight="300, 400, 500, 600, 700, 800">
+        애플 고딕 네오
+      </li>
+      <li data-font="Noto Sans KR" data-weight="100, 300, 400, 500, 700, 900">
+        노토 산스
+      </li>
+      <li data-font="NanumSquare" data-weight="300, 400, 700, 800">
+        나눔 스퀘어
+      </li>
+      <li data-font="Spoqa Han Sans" data-weight="200, 300, 500, 600">
+        스포카 한 산스
+      </li>
+    </ul>
+    <ul class="select-list__02 select-list">
+      <li data-font="Nanum Myeongjo" data-weight="400, 700, 800">
+        나눔 명조
+     </li>
+      <li data-font="chosun ilbo myungjo" data-weight="300, 600">
+        조선일보명조
+      </li>
+      <li data-font="Iropke Batang" data-weight="300, 600">
+        이롭게 바탕체
+      </li>
+      <li data-font="HYgsrB" data-weight="300, 600">
+        궁서체
+      </li>
+    </ul>
+    <div class="close-button" role="button" data-close></div>
+  </div>
+</div>
+<!-- select modal 서체 선택 end -->
+
+<!-- 글자 크기, 두께 조절 모달 -->
+<div class="modal" data-modal="text">
+  <div class="modal-content text-modal-content">
+    <div class="range__box">
+      <p>크기</p>
+      <input class="range" type="range" value="24" min="10" max="64" data-range="size">
+    </div>
+    <div class="range__box">
+      <p>두께</p>
+      <input class="range" type="range" step="100" value="600" min="100" max="900" data-range="weight">
+    </div>
+    <div class="range__box">
+      <p>행간</p>
+      <input class="range" type="range" value="30" min="10" max="128" data-range="line-height">
+    </div>
+    <div class="close-button" role="button" data-close></div>
+  </div>
+</div>
+<!-- 글자 크기, 두께 조절 모달 end -->
+
+<!-- 배경 색상 피커 모달 -->
+<div class="modal" data-modal="bg-color">
+  <div class="modal-content color-modal-content">
+    <div class="color-picker__box">
+      <div id="color-picker-container"></div>
+    </div>
+    <div class="close-button" role="button" data-close></div>
+  </div>
+</div>
+<!-- 배경 색상 피커 모달 end -->
+
+<!-- 글자 색상 피커 모달 -->
+<div class="modal" data-modal="tx-color">
+  <div class="modal-content color-modal-content">
+    <div class="color-picker__box">
+      <div id="color-picker-container__02"></div>
+    </div>
+    <div class="close-button" role="button" data-close></div>
+  </div>
+</div>
+<!-- 글자 색상 피커 모달 end -->
+
+    <main>
+      <div class="text-box">
+        <div class="text-value"></div>
+        <textarea></textarea>
+      </div>
+    </main>
+    <footer>
+    <div class="save-button" data-save role="button">
+        <p>저장</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.41 23.94">
+            <defs><style>.cls-2{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:1.3px;}</style></defs>
+            <ellipse class="cls-2" cx="6.81" cy="11.97" rx="11.34" ry="5.43" transform="translate(-6.39 15.9) rotate(-76.95)"/>
+            <ellipse class="cls-2" cx="14.71" cy="11.97" rx="11.34" ry="5.43" transform="translate(-0.27 23.59) rotate(-76.95)"/>
+            <ellipse class="cls-2" cx="22.61" cy="11.97" rx="11.34" ry="5.43" transform="translate(5.84 31.29) rotate(-76.95)"/>
+        </svg>
+    </div>
+    <div class="upload-img" role="button">
+        <label for="upload-input">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.5 25.5">
+                <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:1.8px;}</style></defs>
+                <g>
+                    <rect class="cls-1" x="0.75" y="0.75" width="24" height="24" rx="1.67" ry="1.67"/>
+                    <path class="cls-1" d="M.75,17.11l4.88-4.94a2,2,0,0,1,2.89,0L21.57,24.75"/>
+                    <path class="cls-1" d="M14.49,17.9l3.22-2.8A2.14,2.14,0,0,1,20.36,15l4.39,3.12"/>
+                    <circle class="cls-1" cx="15.76" cy="7.76" r="2.46"/>
+                </g>
+            </svg>
+        </label>
+        <input type="file" id="upload-input" hidden>
+    </div>
+    <div class="delete-img" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.08 25.85">
+            <defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs>
+            <g>
+                <line class="cls-1" x1="0.75" y1="3.94" x2="18.33" y2="3.94"/>
+                <line class="cls-1" x1="7.12" y1="0.75" x2="11.96" y2="0.75"/>
+                <path class="cls-1" d="M18.3,7.14,16.88,23.47a1.81,1.81,0,0,1-1.83,1.63H4A1.82,1.82,0,0,1,2.2,23.47L.78,7.14"/>
+                <line class="cls-1" x1="7.21" y1="9.69" x2="7.21" y2="20.31"/>
+                <line class="cls-1" x1="11.71" y1="9.69" x2="11.71" y2="20.31"/>
+            </g>
+        </svg>
+    </div>
+    <div class="dim-box" role="button">
+        <svg class="dim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.37 24.37">
+           <g>
+               <path d="M12.18,0A12.19,12.19,0,1,0,24.37,12.18,12.2,12.2,0,0,0,12.18,0ZM9.63,22.55a10.9,10.9,0,0,1-2.63-1l15.75-7.8a10.72,10.72,0,0,1-.76,2.7ZM22.14,8.34l-19,9.44a11.19,11.19,0,0,1-.92-1.87l19-9.43A10.82,10.82,0,0,1,22.14,8.34ZM20.3,5.26,1.75,14.45a10.67,10.67,0,0,1-.25-2.2L18.69,3.73A10.13,10.13,0,0,1,20.3,5.26ZM14.56,1.78a10.62,10.62,0,0,1,2.68,1L1.65,10.5a10.52,10.52,0,0,1,.82-2.73Zm-2.87-.25L4,5.34A10.66,10.66,0,0,1,11.69,1.53ZM4,19,22.59,9.79a11.32,11.32,0,0,1,.27,2.2L5.57,20.56A11,11,0,0,1,4,19Zm8.39,3.84,8.19-4.06A10.67,10.67,0,0,1,12.37,22.86Z"/>
+           </g>
+        </svg>
+        <svg class="transparent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.37 24.37">
+            <g>
+                <path d="M12.18,0A12.19,12.19,0,1,0,24.37,12.18,12.2,12.2,0,0,0,12.18,0Zm7.87,16.91v2.48q-.32.34-.66.66H16.9v1.7a10.47,10.47,0,0,1-3.14,1V20.05H10.61v2.69a10.62,10.62,0,0,1-3.15-1v-1.7H5q-.35-.32-.66-.66V16.91H2.61a10.6,10.6,0,0,1-1-3.15H4.32V10.61H1.63a10.6,10.6,0,0,1,1-3.15H4.32V5q.31-.35.66-.66H7.46V2.61a10.6,10.6,0,0,1,3.15-1V4.32h3.15V1.63a10.45,10.45,0,0,1,3.14,1V4.32h2.49q.34.31.66.66V7.46h1.7a10.62,10.62,0,0,1,1,3.15H20.05v3.15h2.69a10.62,10.62,0,0,1-1,3.15Z"/>
+                <rect x="13.76" y="4.32" width="3.15" height="3.15"/>
+                <rect x="16.9" y="7.46" width="3.15" height="3.15"/>
+                <rect x="7.46" y="4.32" width="3.15" height="3.15"/>
+                <rect x="10.61" y="7.46" width="3.15" height="3.15"/>
+                <rect x="13.76" y="10.61" width="3.15" height="3.15"/>
+                <rect x="16.9" y="13.76" width="3.15" height="3.15"/>
+                <rect x="4.32" y="7.46" width="3.15" height="3.15"/>
+                <rect x="7.46" y="10.61" width="3.15" height="3.15"/>
+                <rect x="10.61" y="13.76" width="3.15" height="3.15"/>
+                <rect x="13.76" y="16.91" width="3.15" height="3.15"/>
+                <rect x="4.32" y="13.76" width="3.15" height="3.15"/>
+                <rect x="7.46" y="16.91" width="3.15" height="3.15"/>
+            </g>
+        </svg>
+    </div>
+</footer>
+  </div>
+<!-- color thief -->
+<script src="./build/js/vendor.min.js"></script>
+<script src="./build/js/app.js"></script>
+<script src="./assets/js/lib/touch-punch.js"></script>
+<!-- html2canvas -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script>
+  $(function () {
+    getHeight(); // 초기 실행
+    getWidth();
+
+    // pc alert
+    function getWidth () {
+      let windowWidth = $(window).width();
+
+      if (windowWidth >= 800) {
+        alert('모바일에 적합한 프로그램입니다.\n모바일로 확인해 주세요.');
+      }
+    }
+
+    // window 높이구하는 함수
+    function getHeight () {
+      let windowHeight = $(window).height();
+      let mainHeight = windowHeight - 116;
+
+      $('main').css('height', mainHeight);
+    }
+
+    // window의 사이즈가 바뀔때마다 실행하는 함수
+    $(window).resize(function () {
+      getHeight();
+      getWidth();
+    });
+
+    // text-value 클릭했을때 textarea로 change
+    $('.text-value').on('click', function () {
+      $(this).hide();
+      $('textarea').show().focus();
+    });
+
+    // textarea rows auto로
+    $("textarea").on('keydown keyup', function () {
+      $(this).height(1).height( $(this).prop('scrollHeight')+12 );
+    });
+
+    // textarea를 다시 text-value
+    $('textarea').on('blur', function () {
+      // textarea value에 br 넣기
+      var textareaValue = $('textarea').val().replace(/(?:\r\n|\r|\n)/g, '<br />');
+
+      $(this).hide();
+      $('.text-value').show();
+
+      if (textareaValue !== '') {
+        $('.text-value').html(textareaValue);
+      } else {
+        $('.text-value').html('우리는, 우리의 생각보다<br>유능하다.');
+      }
+    });
+
+    // text-value 위치 이동
+    $('.text-value').draggable({containment: 'main'});
+  });
+</script>
+</body>
+</html>

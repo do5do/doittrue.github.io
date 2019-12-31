@@ -1,0 +1,275 @@
+header {
+	position: relative;
+	z-index: 20;
+	height: 60px;
+	width: 100%;
+	padding: 0 20px;
+}
+
+.table-cell {
+	font-size: 0;
+}
+
+// 정렬 아이콘
+.align-box {
+	display: inline-block;
+	width: 22px;
+	line-height: 0;
+	vertical-align: middle;
+
+	.align {
+		display: inline-block;
+		height: 2px;
+		width: 100%;
+		background: #000;
+		vertical-align: top;
+	}
+
+	.box2 {
+		width: 17px;
+	}
+
+	.box3 {
+		width: 20px;
+	}
+
+	.box4 {
+		width: 12px;
+	}
+
+	// 정렬 삽질 (참고)
+	&.center {
+		text-align: center;
+		.align {
+			// position으로 가운데 정렬 시켰을때
+			/*position: relative;
+			left: 50%;
+			transform: translateX(-50%);*/
+		}
+	}
+
+	&.right {
+		text-align: right;
+		// 좌우 반전, y축 가운데 맞춰줌
+		/*transform:scaleX(-1) translateY(-50%);
+		top:50%;*/
+	}
+	// 정렬 삽질 (참고)
+}
+
+.align + .align {
+	margin-top: 4px;
+}
+
+// 글자 크기
+.text-size {
+	position: relative;
+	top: -1px;
+	display: inline-block;
+	margin-left: 26px;
+	vertical-align: middle;
+
+	p {
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	.plus-box {
+		position: absolute;
+		top: -1px;
+		right: -9px;
+
+		.plus-box__inner {
+			position: relative;
+			width: 8px;
+			height: 8px;
+		}
+
+		.plus {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			height: 2px;
+			background: #000;
+
+			&.vertical {
+				transform: rotate(90deg) translateX(-0.5px);
+			}
+		}
+	}
+}
+
+// 서체 변경
+.font-type__box {
+	display: inline-block;
+	margin-left: 26px;
+
+	.font-type {
+		display: inline-block;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 28px;
+		vertical-align: middle;
+	}
+}
+
+// color 변경
+.color-box {
+	display: inline-block;
+
+	span {
+		font-size: 18px;
+		font-weight: 700;
+		padding-right: 10px;
+	}
+
+	.circle {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: #000;
+		vertical-align: bottom;
+		margin-bottom: 2.2px;
+
+		&.stroke {
+			border: 1px solid #000;
+			background: #fff;
+		}
+	}
+}
+
+.color-box + .color-box {
+	margin-left: 16px;
+}
+
+// select modal 서체 선택
+.modal {
+	display: none;
+	position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  //background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  position: absolute;
+  width:100%;
+  bottom: 0;
+  background: #fff;
+  padding:6px 20px 20px 20px;
+  text-align: center;
+	box-shadow: (0 10px 20px -8px);
+
+  .close-button {
+    background: url(../../assets/images/cancel.svg) no-repeat center;
+    height: 24px;
+    width: 24px;
+    float:right;
+  }
+}
+
+.tab-bar {
+  height: 44px;
+  font-size: 0;
+	margin: 0 -20px 22px -20px;
+  .tab {
+    display: inline-block;
+    width:50%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 44px;
+
+    &.selected {
+	    border-bottom: 2px solid #000;
+    }
+
+    p {
+      display: inline-block;
+	    margin-top: -2px;
+    }
+
+  }
+}
+
+.select-list {
+	li {
+		height: 52px;
+		line-height: 54px;
+		font-weight: 700;
+		font-size: 18px;
+		color: rgba(0, 0, 0, 0.3);
+
+		&.selected {
+			font-weight: 700;
+			color: rgba(0, 0, 0, 1);
+			margin-left: -10px;
+
+			&:before {
+				display: inline-block;
+				content: '';
+				background: url(../../assets/images/icon-select.svg) no-repeat center;
+				width: 16px;
+				height: 16px;
+				vertical-align: middle;
+				margin:0 2px 4px 0;
+			}
+		}
+	}
+
+	&.select-list__02 {
+		display: none;
+	}
+}
+
+// 글자 크기, 두께 조절 모달
+.text-modal-content {
+	padding-top: 20px;
+	text-align: left;
+}
+
+.range__box {
+	padding-bottom: 44px;
+	p {
+		font-weight: 700;
+		font-size: 18px;
+		padding-bottom:30px;
+	}
+
+	// input range
+	.range {
+		-webkit-appearance: none;
+		display: block;
+		width: 100%;
+		height: 5px;
+		background-color: rgba(0, 0, 0, 0.1);
+		outline: 0;
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			border: none;
+			outline: 0;
+			background: #fff;
+			box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.12);
+			transition: background .15s ease-in-out;
+		}
+	}
+}
+
+// 색상 피커 모달
+.color-modal-content {
+	padding-top: 30px;
+}
+
+.color-picker__box {
+	width: 280px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+

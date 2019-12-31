@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.08 25.85">
+    <defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs>
+    <g>
+        <line class="cls-1" x1="0.75" y1="3.94" x2="18.33" y2="3.94"/>
+        <line class="cls-1" x1="7.12" y1="0.75" x2="11.96" y2="0.75"/>
+        <path class="cls-1" d="M18.3,7.14,16.88,23.47a1.81,1.81,0,0,1-1.83,1.63H4A1.82,1.82,0,0,1,2.2,23.47L.78,7.14"/>
+        <line class="cls-1" x1="7.21" y1="9.69" x2="7.21" y2="20.31"/>
+        <line class="cls-1" x1="11.71" y1="9.69" x2="11.71" y2="20.31"/>
+    </g>
+</svg>
