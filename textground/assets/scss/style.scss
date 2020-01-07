@@ -58,7 +58,7 @@ main {
   word-break: break-all;
   font-variant-ligatures: none; // 텍스트가 겹치지 않도록
   &:empty:before {
-    content: '우리는, 우리의 생각보다\A유능하다.'; //br은 \A임
+    content: '무엇이든\A입력해보세요.'; //br은 \A임
     white-space: pre;
   }
 }

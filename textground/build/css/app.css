@@ -470,7 +470,7 @@ main {
 }
 
 .text-value:empty:before {
-  content: '우리는, 우리의 생각보다\A유능하다.';
+  content: '무엇이든\A입력해보세요.';
   white-space: pre;
 }
 
