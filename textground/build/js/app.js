@@ -55,6 +55,8 @@ $(function () {
 
 		// 인풋의 value(이미지 src)를 비워줌!
 		$('#upload-input').val('');
+		// ratio canvas 다시 그려주기
+		drawRatioCanvas();
 
 		$(this).hide();
 		$('.upload-img').show();
